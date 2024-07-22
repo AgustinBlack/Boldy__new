@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAVSSNFJUNx5U5naT2pJt59M97XSPejh-c",
-  authDomain: "boldy-284f2.firebaseapp.com",
-  projectId: "boldy-284f2",
-  storageBucket: "boldy-284f2.appspot.com",
-  messagingSenderId: "600632746965",
-  appId: "1:600632746965:web:da4efc170857b6db59d35c"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 const app = initializeApp(firebaseConfig);
