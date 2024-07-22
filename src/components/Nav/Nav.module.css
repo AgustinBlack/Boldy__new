@@ -1,0 +1,25 @@
+.div__nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.div__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn__nav{
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btn__nav:hover{
+    transition: 0.7s;
+    background-color: rgb(225, 52, 52);
+    border: red;
+    border-radius: 5px;
+    color: white;
+}
