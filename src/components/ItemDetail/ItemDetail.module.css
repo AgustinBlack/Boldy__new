@@ -1,0 +1,85 @@
+.div__padre{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    border: 1.5px solid #d2d2d2;
+    border-radius: 10px;
+    width: 290px;
+    padding-bottom: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.carrusel{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.carrusel__img{
+    width: 50px;
+    border: 1.5px solid rgb(185, 179, 179);
+    border-radius: 3px;
+}
+
+.carrusel__img:hover{
+    cursor: pointer;
+}
+
+.nombre__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn__favorito{
+    width: 24px;
+    height: 24px;
+}
+
+.div__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 86%;
+    gap: 5px;
+    margin-left: 20px;
+}
+
+.info__span{
+    font-weight: 500;
+}
+
+.img{
+    width: 100%;
+    border-radius: 7px;
+}
+
+
+.div__btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn{
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #15c44a;
+    text-decoration: none;
+    color: black;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color: #15c44a;
+    color: white;
+    transition: all ease 0.5s;
+}

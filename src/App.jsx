@@ -2,19 +2,20 @@ import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Us from './components/Us/Us'
-import ItemList from './components/ItemList/ItemList'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ProductSave from './components/ProductSave/ProductSave'
-import Item from './components/Item/Item'
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar/>
       <Routes>
+        <Route path='/' element={<ItemListContainer children={'Listado de productos'} />}/>
         <Route path='/seccion/Nosotros' element={<Us/>} />
-        <Route path='/seccion/Productos' element={<ItemList/>} />
+        <Route path='/type/:typeId' element={<ItemListContainer/>} />
+        <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
         <Route path='/seccion/Guardados' element={<ProductSave/>} />
-        <Route path='/detail/:productoId'element={<Item/>} />
       </Routes>
     </BrowserRouter>
   )

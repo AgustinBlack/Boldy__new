@@ -1,0 +1,49 @@
+.div__padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(231 231 231);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.img{
+    width: 160px;
+    border-radius: 5px;
+}
+
+.div__info{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info__nombre{
+    font-weight: 400;
+}
+
+.info__precio{
+    font-size: smaller;
+}
+
+.div__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn{
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: small;
+    color: black;
+    background-color: antiquewhite;
+    padding: 8px;
+}

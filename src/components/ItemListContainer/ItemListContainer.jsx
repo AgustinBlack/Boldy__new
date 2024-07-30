@@ -1,20 +1,19 @@
 import ItemList from "../ItemList/ItemList"
-import { getProducts } from "../../services/firebase/firestore/products"
 import { useParams } from "react-router-dom"
-import { useAsync } from "../../hooks/useAsync"
-
+import { getProducts } from "../../services/firebase/firestore/products"
+import { useAsync } from "../../hooks/useAsync";
 
 const ItemListContainer = () => {
-
+    
   const { typeId } = useParams()
-
   const asyncFuntion = () => getProducts(typeId)
+  const { data: productos } = useAsync(asyncFuntion, [typeId])
 
-  const { data: productos = [] } = useAsync(asyncFuntion, [typeId])
-
+  console.log(productos);
+  
   return (
     <div>
-        <ItemList productos={productos}/>
+        <ItemList productos={productos} children={'Bienvenidos'}/>
     </div>
   )
 }
