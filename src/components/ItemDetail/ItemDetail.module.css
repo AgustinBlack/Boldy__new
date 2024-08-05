@@ -18,6 +18,10 @@
     justify-content: space-evenly;
 }
 
+.carrusel__item.active .carrusel__img {
+    opacity: 0.5;
+}
+
 .carrusel__img{
     width: 50px;
     border: 1.5px solid rgb(185, 179, 179);
@@ -66,7 +70,7 @@
 }
 
 .btn{
-    width: 150px;
+    width: 250px;
     height: 30px;
     border-radius: 15px;
     border: 2px solid #15c44a;
