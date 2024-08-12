@@ -1,13 +1,13 @@
 import { db } from "../firebaseConfig";
 import { storage } from "../firebaseConfig";
-import { collection, query, getDocs, where, getDoc, doc, QuerySnapshot } from "firebase/firestore";
+import { collection, query, getDocs, where, getDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref } from "@firebase/storage";
 
 export const getProducts = (typeId) => {
     const productosColeccion = typeId
       ? query(collection(db, 'productos'), where('tipo', '==', typeId))
       : collection(db, 'productos')
-
+      
     return getDocs(productosColeccion)
       .then(async(querySnapshot) => {
         const productosAdaptados = querySnapshot.docs.map(doc => {

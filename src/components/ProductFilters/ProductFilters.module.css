@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap: 10px;
+    margin: 10px;
+}
+
+.input{
+    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.select__option{
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.option:hover{
+    background-color: rgb(116, 116, 116);
+    color: white;
+}

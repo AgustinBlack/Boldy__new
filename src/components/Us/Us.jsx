@@ -1,3 +1,4 @@
+import Suscription from '../Suscription/Suscription'
 import clases from './Us.module.css'
 
 const Us = () => {
@@ -9,6 +10,7 @@ const Us = () => {
         <div className={clases.div__desc}>
             <p className={clases.desc}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores expedita reprehenderit voluptatum, magnam at nostrum eveniet, unde recusandae iure numquam maxime sed ex deserunt perspiciatis. Odit a dignissimos tempore obcaecati?</p>
         </div>
+        <Suscription/>
     </section>
   )
 }

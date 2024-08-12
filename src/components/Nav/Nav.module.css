@@ -32,7 +32,7 @@
     width: 94%;
     display: flex;
     justify-content: center;
-    border: solid 3px #464646;
+    border: solid 3px #000;
     border-radius: 35px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
     z-index: 1000;
