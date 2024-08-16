@@ -10,10 +10,10 @@ export const FiltrersProvider = ({ children }) => {
         let sortedProducts = [...prod]
         switch (sortBy) {
             case 'price_asc':
-                sortedProducts.sort((a, b) => a.price - a.price)
+                sortedProducts.sort((a, b) => a.precio - b.precio)
                 break;
             case 'price_desc':
-                sortedProducts.sort((a, b) => b.price - a.price)
+                sortedProducts.sort((a, b) => b.precio - a.precio)
                 break;
             default:
                 break;

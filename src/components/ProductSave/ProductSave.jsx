@@ -1,13 +1,12 @@
 import clases from './ProductSave.module.css'
 import { useFav } from "../../context/FavContent"
-import removeProd from '../../assets/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import removeProd from '../../assets/icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 
 const ProductSave = () => {
   const { fav, removeItem } = useFav();
 
   return (
     <div className={clases.fav__container}>
-      <h3 className={clases.titulo}>Productos Favoritos</h3>
       {fav.length === 0 ? (
         <p className={clases.fav__vacio}>No hay productos en favoritos.</p>
       ) : (

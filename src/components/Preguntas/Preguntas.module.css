@@ -1,6 +1,4 @@
-.titulo {
-    text-align: center;
-    text-decoration: underline;
+.container{
     margin-top: 20px;
 }
 
@@ -37,4 +35,17 @@
     max-height: 1000px;
     padding-bottom: 5px;
     transition: max-height 0.5s ease;
+}
+
+@media(min-width: 1000px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 110px;
+    }
+
+    .faq{
+        width: 60%;
+    }
 }

@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+
+@media(min-width: 1000px) {
+    .div{
+        flex-direction: row;
+    }
+}

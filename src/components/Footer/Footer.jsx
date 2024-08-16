@@ -1,8 +1,8 @@
 import React from 'react'
 import clases from './Footer.module.css'
-import phone from '../../assets/icons8-teléfono-32.png'
-import gmail from '../../assets/icons8-gmail-50.png'
-import instagram from '../../assets/icons8-instagram-32.png'
+import phone from '../../assets/icons/icons8-teléfono-32.png'
+import gmail from '../../assets/icons/icons8-gmail-50.png'
+import instagram from '../../assets/icons/icons8-instagram-32.png'
 
 const Footer = () => {
   return (

@@ -21,3 +21,9 @@
     background-color: rgb(116, 116, 116);
     color: white;
 }
+
+@media(min-width: 1000px) {
+    .container{
+        margin-left: 70px;
+    }
+}

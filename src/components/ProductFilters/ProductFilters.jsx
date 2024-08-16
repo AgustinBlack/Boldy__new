@@ -17,6 +17,7 @@ const ProductFilters = () => {
         <option className={clases.option} value="price_asc">Price: Low to High</option>
         <option className={clases.option} value="price_desc">Price: High to Low</option>
       </select>
+      {/* <input type="range"/> */}
     </div>
   );
 };

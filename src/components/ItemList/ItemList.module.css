@@ -1,11 +1,17 @@
-.titulo{
-    text-decoration: underline;
-    text-align: center;
-    margin-top: 10px;
-}
-
 .div{
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+@media(min-width: 1000px) {
+    .container__prods{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 110px;
+        /* gap: 50px; */
+    }   
 }
