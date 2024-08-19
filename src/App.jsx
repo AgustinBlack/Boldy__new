@@ -11,6 +11,7 @@ import Preguntas from './components/Preguntas/Preguntas'
 import { FavProvider } from './context/FavContent'
 import { UseNotificationProvider } from './context/UseNotification'
 import { FiltrersProvider } from './context/FiltrersProd'
+import Admin from './components/Admin/Admin'
 
 function App() {
   return (
@@ -21,12 +22,13 @@ function App() {
             <Navbar/>
             <Notification/>
             <Routes>
-              <Route path='/' element={<ItemListContainer children={'Listado de productos'} />}/>
+              <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
               <Route path='/type/:typeId' element={<ItemListContainer/>} />
               <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
               <Route path='/seccion/Guardados' element={<ProductSave/>} />
-              <Route path='/seccion/Nosotros' element={<Us/>} />
+              <Route path='/' element={<Us/>} />
               <Route path='/seccion/Preguntas' element={<Preguntas/>} />
+              <Route path='/seccion/User' element={<Admin/>}/>
             </Routes>
           </FavProvider>
         </FiltrersProvider>
