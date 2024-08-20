@@ -10,9 +10,10 @@ const ItemListContainer = () => {
   const asyncFunction = () => getProducts(typeId)
   const { data: productos } = useAsync(asyncFunction, [typeId])
 
-  const { sortProducts, filtrerProducts } = useFiltrers()
+  const { sortProducts, filtrerProducts, filterByBrand, selectBrand } = useFiltrers()
 
-  const filtreredProducts = sortProducts(filtrerProducts(productos))
+  const filteredByBrand = filterByBrand(productos, selectBrand)
+  const filtreredProducts = sortProducts(filtrerProducts(filteredByBrand))
   
   return (
     <div>

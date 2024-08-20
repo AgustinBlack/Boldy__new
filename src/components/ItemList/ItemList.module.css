@@ -9,9 +9,12 @@
 @media(min-width: 1000px) {
     .container__prods{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 110px;
-        /* gap: 50px; */
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 110px 32px 0;
     }   
+
+    .div{
+        width: 100%;
+    }
 }

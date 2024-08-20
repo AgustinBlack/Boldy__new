@@ -5,6 +5,7 @@ const FiltrersContext = createContext()
 export const FiltrersProvider = ({ children }) => {
     const [sortBy, setSortBy] = useState('')
     const [searchQuery, setSearchQuery] = useState('')
+    const [selectBrand, setSelectBrand] = useState('')
 
     const sortProducts = (prod) => {
         let sortedProducts = [...prod]
@@ -27,8 +28,13 @@ export const FiltrersProvider = ({ children }) => {
         )
     }
 
+    const filterByBrand = (prod) => {
+        if (!selectBrand) return prod
+        return prod.filter(product => product.marca === selectBrand)
+    }
+
     return (
-        <FiltrersContext.Provider value={{ sortBy, setSortBy, searchQuery, setSearchQuery, sortProducts, filtrerProducts }}>
+        <FiltrersContext.Provider value={{ sortBy, setSortBy, searchQuery, setSearchQuery, sortProducts, filtrerProducts, selectBrand, setSelectBrand, filterByBrand}}>
             {children}
         </FiltrersContext.Provider>
     )

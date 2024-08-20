@@ -6,8 +6,13 @@
     margin: 10px;
 }
 
+.filterPng{
+    width: 24px;
+    height: 24px;
+}
+
 .input{
-    padding: 3px;
+    padding: 1px;
     border-radius: 3px;
     border: 1px solid black;
 }
@@ -22,8 +27,21 @@
     color: white;
 }
 
+.filtersContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 @media(min-width: 1000px) {
     .container{
-        margin-left: 70px;
+        margin-left: 10px;
+        height: 20px;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .input, .select__option{
+        width: 200px;
     }
 }
