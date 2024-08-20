@@ -13,8 +13,6 @@ const ItemListContainer = () => {
   const { sortProducts, filtrerProducts } = useFiltrers()
 
   const filtreredProducts = sortProducts(filtrerProducts(productos))
-
-  console.log(filtreredProducts);
   
   return (
     <div>

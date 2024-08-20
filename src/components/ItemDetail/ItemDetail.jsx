@@ -56,7 +56,7 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
               <p className={clases.info}>${precio}</p>
               <p className={clases.info}><span className={clases.info__span}>Size:</span> {talle}</p>
               <p className={clases.info}><span className={clases.info__span}>Genre:</span> {genero}</p>
-              <p className={clases.info}><span className={clases.info__span}>Footwear:</span> {tipo}</p>              
+              <p className={clases.info}><span className={clases.info__span}>Footwear:</span> {tipo}</p>
             </div>
           </div>
           <div className={clases.div__btn}>

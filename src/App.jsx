@@ -11,7 +11,8 @@ import Preguntas from './components/Preguntas/Preguntas'
 import { FavProvider } from './context/FavContent'
 import { UseNotificationProvider } from './context/UseNotification'
 import { FiltrersProvider } from './context/FiltrersProd'
-import Admin from './components/Admin/Admin'
+// import Admin from './components/Admin/Admin'
+import FormUserSesion from './components/FormUserSesion/FormUserSesion'
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
               <Route path='/seccion/Guardados' element={<ProductSave/>} />
               <Route path='/' element={<Us/>} />
               <Route path='/seccion/Preguntas' element={<Preguntas/>} />
-              <Route path='/seccion/User' element={<Admin/>}/>
+              <Route path='/seccion/User' element={<FormUserSesion/>}/>
             </Routes>
           </FavProvider>
         </FiltrersProvider>

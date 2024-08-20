@@ -13,8 +13,6 @@ const ItemDetailContainer = () => {
 
   const { data: producto } = useAsync(asyncFunction, [productoId])
 
-  console.log(producto)
-
   if(!producto) {
     return <h1>El producto no existe</h1>
   }

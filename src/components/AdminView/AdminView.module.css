@@ -1,5 +1,5 @@
 .container{
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -25,11 +25,7 @@
     border-bottom: 1px solid;
 }
 
-/* .input__img{
-    background-color: white;
-} */
-
-.container__add{
+.container__btn{
     display: flex;
     justify-content: center;
 }
@@ -61,6 +57,27 @@
     padding-bottom: 2px;
 }
 
-.btn__delete{
+.div__btns{
+    display: flex;
+    gap: 10px;
+}
+
+.btn__delete, .btn__edit{
     width: 20px;
+}
+
+
+@media(min-width: 1000px) {
+    .container{
+        margin-top: 100px;
+        align-items: center;
+    }
+
+    .container__prod__name{
+        width: 60%;
+    }
+
+    .lista{
+        width: 60%;
+    }
 }
