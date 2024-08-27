@@ -38,9 +38,9 @@
 }
 
 @media(min-width: 1000px) {
-    .loginContainer{
+    /* .loginContainer{
         margin-top: 110px;
-    }
+    } */
 
     .inputs{
         width: 200px;

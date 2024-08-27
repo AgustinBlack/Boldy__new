@@ -50,7 +50,7 @@ const Nav = () => {
                     <span className={clases.link__icon}>
                         <img className={clases.nav__img} src={question} width="192" height="192" fill="currentColor" viewBox="0 0 256 256"></img>
                     </span>
-                    <span className={clases.link__title}>Preguntas</span>
+                    <span className={clases.link__title}>FAQS</span>
                 </Link>
                 {/* {
                     isAdmin && (
