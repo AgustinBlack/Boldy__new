@@ -1,26 +1,27 @@
 .notification {
     position: fixed;
     top: 10px;
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 18px;
     border-radius: 36px;
-    color: black;
+    color: white;
     z-index: 1000;
+    max-width: 90%;
+    white-space: nowrap;
 }
 
 .success {
-    background-color: white;
+    background-color: green;
     border: green 3px solid;
 }
 
 .error {
-    background-color: white;
-    border: red 3px solid;
-    right: 39px;
+    background-color: rgb(227 6 20);
+    border: rgb(227 6 20) 3px solid;
 }
 
 .info {
-    background-color: white;
-    border: blue 3px solid;
-    right: 15px;
+    background-color: rgb(74, 74, 213);
+    border: rgb(74, 74, 213) 3px solid;
 }

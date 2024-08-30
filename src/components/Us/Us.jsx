@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Suscription from '../Suscription/Suscription'
 import clases from './Us.module.css'
 import corteiz from '../../assets/logos/corteiz-the-streetwear-studio.png'
@@ -7,14 +8,30 @@ import palmAngels from '../../assets/logos/Palm-Angels-Logo.png'
 import projectNude from '../../assets/logos/project nude.png'
 import stussy from '../../assets/logos/Stussy Logo.png'
 import supreme from '../../assets/logos/Supreme Logo.png'
-import buzoE from '../../assets/imgsWeb/buzoEssentials.webp'
-import buzoNP from '../../assets/imgsWeb/buzoNudeProject.webp'
 import iconMail from '../../assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import iconQuote from '../../assets/icons/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import iconCheck from '../../assets/icons/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import FormUserSesion from '../FormUserSesion/FormUserSesion'
 
 const Us = () => {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 3; // Ajusta este valor según la cantidad de pasos que tengas en el carrusel
+
+  // Cambiar slide cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+    }, 5000); // Cambia cada 5 segundos
+
+    return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonte
+  }, [totalSlides]);
+
+  // Manejo de cambio manual
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div>
       <div className={clases.slider}>
@@ -28,7 +45,7 @@ const Us = () => {
           <div className={clases.slide}><img className={clases.logos} src={supreme} alt="" /></div>
         </div>
       </div>
-      
+
       <section className={clases.container}>
         <h2 className={clases.titulo}>Bienvenidos a BOLDY</h2>
         <div className={clases.txt__container}>
@@ -50,14 +67,14 @@ const Us = () => {
             </div>
             <div className={clases.div__desc}>
               <p className={clases.desc}>Realizamos encargos especiales desde Estados Unidos hacia Argentina para que puedas acceder a los artículos que más te interesan. El proceso es simple y eficiente:</p>
-            </div>            
+            </div>
           </div>
-          <div className={clases.encargos__container}>
+          <div className={clases.encargos__container} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             <div className={clases.div__procesos}>
               <img className={clases.img__procesos} src={iconMail} alt="Send" />
-              <h4>Envíanos tu 
-                  <br/> 
-                  Solicitud
+              <h4>Envíanos tu
+                <br/>
+                Solicitud
               </h4>
               <p>Proporciona un enlace o una foto de referencia del producto que deseas, especificando el talle si es necesario.</p>
             </div>
@@ -72,17 +89,26 @@ const Us = () => {
               <p>Si estás de acuerdo con la cotización, confirma tu pedido y comenzaremos a gestionarlo de inmediato.</p>
             </div>
           </div>
+          <div className={clases.carrusel_indicators}>
+            {[...Array(totalSlides)].map((_, index) => (
+              <button
+                key={index}
+                className={clases.index === currentSlide ? 'active' : ''}
+                onClick={() => handleSlideChange(index)}
+              />
+            ))}
+          </div>
           <div className={clases.txt__container}>
-              <div className={clases.div__desc}>
-                <p className={clases.desc}>Una vez confirmado, tu pedido llegará a tus manos en aproximadamente 2 a 3 semanas. En Boldy, nos aseguramos de que cada paso del proceso sea transparente y que recibas el producto que has solicitado con la mejor calidad y al mejor precio posible.</p>
-              </div>
-              <div className={clases.div__desc}>
-                <p className={clases.desc}>Para más detalles o para realizar un encargo, no dudes en contactarnos. ¡Estamos aquí para ayudarte a conseguir todo lo que necesitas!</p>
-                <div className={clases.div__btn}>
-                  <a className={clases.btn} href="https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre...">Contactar al WhatsApp</a>
-                </div>
+            <div className={clases.div__desc}>
+              <p className={clases.desc}>Una vez confirmado, tu pedido llegará a tus manos en aproximadamente 2 a 3 semanas. En Boldy, nos aseguramos de que cada paso del proceso sea transparente y que recibas el producto que has solicitado con la mejor calidad y al mejor precio posible.</p>
+            </div>
+            <div className={clases.div__desc}>
+              <p className={clases.desc}>Para más detalles o para realizar un encargo, no dudes en contactarnos. ¡Estamos aquí para ayudarte a conseguir todo lo que necesitas!</p>
+              <div className={clases.div__btn}>
+                <a className={clases.btn} href="https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre...">Contactar al WhatsApp</a>
               </div>
             </div>
+          </div>
         </div>
       </section>
     </div>

@@ -26,7 +26,7 @@ export const FavProvider = ({ children }) => {
             localStorage.setItem('favorites', JSON.stringify(newFav));
             showNotification('El produto fue agregado a favoritos.', 'success')
         } else (
-            showNotification('El producto ya esta en favoritos.', 'error')
+            showNotification('El producto fue eliminado de favoritos.', 'error')
         )
     };
 
@@ -34,7 +34,7 @@ export const FavProvider = ({ children }) => {
         const favUpdated = fav.filter(prod => prod.id !== id);
         setFav(favUpdated);
         localStorage.setItem('favorites', JSON.stringify(favUpdated));
-        showNotification('El producto fue removido de favoritos.', 'info')
+        showNotification('El producto fue eliminado.', 'error')
     };
 
     const clearFav = () => {

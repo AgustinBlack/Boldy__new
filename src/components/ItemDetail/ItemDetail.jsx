@@ -7,9 +7,9 @@ import { useFav } from '../../context/FavContent';
 const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
   const imagesArray = Array.isArray(img) ? img : [img];
 
-  const [mainImg, setMainImg] = useState(imagesArray[0])
-  const { addItem } = useFav()
-  const [isFavourite, setIsFavourite] = useState(true)
+  const [mainImg, setMainImg] = useState(imagesArray[0]);
+  const { addItem, removeItem, isInFav } = useFav();
+  const [isFavourite, setIsFavourite] = useState(false);
 
   useEffect(() => {
     if (imagesArray.length > 0) {
@@ -17,17 +17,32 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
     }
   }, [imagesArray]);
 
+
+  useEffect(() => {
+    setIsFavourite(isInFav(id));
+  }, [id, isInFav]);
+
   const handleClickImg = (imgSrc) => {
-    setMainImg(imgSrc)
-  }
+    setMainImg(imgSrc);
+  };
 
   const handleOnAdd = () => {
     const objProdToFav = {
-      id, nombre, precio, talle, img: imagesArray
+      id,
+      nombre,
+      precio,
+      talle,
+      img: imagesArray
+    };
+
+    if (isFavourite) {
+      removeItem(id);
+    } else {
+      addItem(objProdToFav);
     }
-    addItem(objProdToFav)
-    setIsFavourite(false)
-  }
+
+    setIsFavourite(!isFavourite);
+  };
 
   return (
     <div className={clases.div__padre}>
@@ -38,8 +53,16 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
           {imagesArray.length > 0 && (
             <div className={clases.carrusel}>
               {imagesArray.map((prodImg, index) => (
-                <div key={index} className={`${clases.carrusel__item} ${mainImg === prodImg ? clases.active : ''}`} onClick={() => handleClickImg(prodImg)}>
-                  <img className={clases.carrusel__img} src={prodImg} alt={`${nombre} ${index + 1}`} />
+                <div
+                  key={index}
+                  className={`${clases.carrusel__item} ${mainImg === prodImg ? clases.active : ''}`}
+                  onClick={() => handleClickImg(prodImg)}
+                >
+                  <img
+                    className={clases.carrusel__img}
+                    src={prodImg}
+                    alt={`${nombre} ${index + 1}`}
+                  />
                 </div>
               ))}
             </div>
@@ -50,7 +73,12 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
           <div className={clases.div__info}>
             <div className={clases.nombre__btn}>
               <h3 className={clases.info__nombre}>{nombre}</h3>
-              <img className={clases.btn__favorito} src={isFavourite ? favorito : agregadoAFav} alt="" onClick={handleOnAdd} />
+              <img
+                className={clases.btn__favorito}
+                src={isFavourite ? agregadoAFav : favorito}
+                alt=""
+                onClick={handleOnAdd}
+              />
             </div>
             <div className={clases.info__data}>
               <p className={clases.info}>${precio}</p>
@@ -64,10 +92,8 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
           </div>
         </div>
       </div>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;

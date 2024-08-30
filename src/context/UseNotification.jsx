@@ -10,7 +10,7 @@ export const UseNotificationProvider = ({ children }) => {
         setNotification({ mensaje, type })
         setTimeout(() => {
             setNotification({mensaje: '', type: ''})
-        }, 3000)
+        }, 2500)
     }
 
     return (

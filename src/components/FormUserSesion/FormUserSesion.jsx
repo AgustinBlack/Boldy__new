@@ -35,6 +35,11 @@ const FormUserSesion = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
+        if (!email.trim() || !password.trim()) {
+            alert('Usuario o Contraseña se encuentra vacío. Por favor, complete ambos campos.');
+            return;
+        }
+
         const saveCredentials = window.confirm('¿Deseas guardar tus credenciales para la próxima vez?');
 
         if (saveCredentials) {
