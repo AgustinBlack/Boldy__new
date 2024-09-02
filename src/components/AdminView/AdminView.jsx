@@ -16,7 +16,7 @@ function AdminView() {
     const [newFootwear, setNewFootWear] = useState('');
     const [newSize, setNewSize] = useState('');
     const [imageUrls, setImageUrls] = useState([]);
-    const [editingProductId, setEditingProductId] = useState(null); // Para manejar la edición
+    const [editingProductId, setEditingProductId] = useState(null);
 
     useEffect(() => {
         const getProductsData = async () => {
@@ -27,8 +27,11 @@ function AdminView() {
     }, []);
 
     const handleAddOrUpdateProduct = async () => {
+        if (!newProductName || !newPrice || !newGenre || !newFootwear || !newSize || imageUrls.length === 0) {
+            alert('Por favor, completa todos los campos antes de agregar o actualizar el producto.');
+            return;
+        }
         if (editingProductId) {
-            // Actualiza el producto existente
             const productRef = doc(db, "productos", editingProductId);
             await updateDoc(productRef, {
                 nombre: newProductName,
@@ -40,7 +43,6 @@ function AdminView() {
             });
             setEditingProductId(null);
         } else {
-            // Agrega un nuevo producto
             await addDoc(collection(db, "productos"), {
                 nombre: newProductName,
                 precio: newPrice,
@@ -110,14 +112,13 @@ function AdminView() {
     };
 
     const handleEditProduct = (product) => {
-        // Rellena los campos del formulario con la información del producto a editar
         setNewProductName(product.nombre);
         setNewPrice(product.precio);
         setNewGenre(product.genero);
         setNewFootWear(product.tipo);
         setNewSize(product.talle);
         setImageUrls([product.img]);
-        setEditingProductId(product.id); // Establece el ID del producto que se está editando
+        setEditingProductId(product.id);
     };
 
     return (
