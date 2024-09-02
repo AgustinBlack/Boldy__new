@@ -24,7 +24,7 @@ const Preguntas = () => {
       {preguntas.map((item, index) => (
         <div key={index} className={clases.faq}>
           <div className={clases.question} onClick={() => handleQuestionClick(index)}>
-            <h4>{item.pregunta}</h4>
+            <p>{item.pregunta}</p>
             <img
               className={clases.imgSuma}
               src={activeIndex === index ? ocultarRta : despliegaRta}

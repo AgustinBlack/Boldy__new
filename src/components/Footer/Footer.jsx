@@ -3,6 +3,7 @@ import clases from './Footer.module.css'
 import phone from '../../assets/icons/icons8-teléfono-32.png'
 import gmail from '../../assets/icons/icons8-gmail-50.png'
 import instagram from '../../assets/icons/icons8-instagram-32.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -10,9 +11,9 @@ const Footer = () => {
         <div className={clases.div__padre}>
             <h4 className={clases.titulo}>Navegacion</h4>
             <div className={clases.div__data}>
-                <p className={clases.data}>Inicio</p>
-                <p className={clases.data}>Productos</p>
-                <p className={clases.data}>Favoritos</p>
+                <p className={clases.data}><Link to='/'>Inicio</Link></p>
+                <p className={clases.data}><Link to='seccion/Productos'>Productos</Link></p>
+                <p className={clases.data}><Link to='seccion/Preguntas'>FAQS</Link></p>
             </div>
         </div>
         <div className={clases.div__padre}>

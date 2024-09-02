@@ -37,16 +37,22 @@
     width: 50%;
 }
 
+.btn:hover{
+    background-color: rgb(56, 140, 218);
+    color: white;
+    transition: 0.5s all ease;
+}
+
 @media(min-width: 1000px) {
-    /* .loginContainer{
+    .loginContainer{
         margin-top: 110px;
-    } */
+    }
 
     .inputs{
         width: 200px;
     }
 
     .btn{
-        width: 100px;
+        width: 150px;
     }
 }

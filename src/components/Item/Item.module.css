@@ -44,11 +44,17 @@
 
 .btn{
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: small;
-    color: white;
-    background-color: #e30614;
+    border: 2px solid #e30614;
+    color: black;
     padding: 8px;
+}
+
+.btn:hover{
+    background-color: #e30614;
+    color: white;
+    transition: all ease 0.5s;
 }
 
 @media(min-width: 1000px){
