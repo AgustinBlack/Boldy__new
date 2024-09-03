@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .logo{
@@ -37,6 +38,9 @@
     z-index: 1000;
 }
 
+.link__elements{
+    display: flex;
+}
 
 .link {
     margin: 5px 0;
@@ -73,7 +77,7 @@
 .link:hover,
 .link:focus {
     outline: 0;
-    width: 130px;
+    width: auto;
 }
 
 .link:hover:before,
@@ -89,8 +93,8 @@
     height: 28px;
     display: block;
     flex-shrink: 0;
-    left: 13px;
     position: absolute;
+    margin-left: 5px;
 }
 
 .link__icon svg {
@@ -104,8 +108,8 @@
     transform-origin: center right;
     display: block;
     text-align: center;
-    text-indent: 28px;
     width: 100%;
+    margin: 0 10px 0 30px;
 }
 
 .nav__img {

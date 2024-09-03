@@ -10,7 +10,25 @@ p{
   margin-bottom: 0 !important;
 }
 
+h2{
+  font-weight: 500 !important;
+  line-height: normal !important;
+}
+
+h3{
+  margin-bottom: 0 !important;
+  font-size: larger;
+}
+
+img{
+  vertical-align: unset !important;
+}
+
 input{
-  font-size: none !important;
-  line-height: none !important;
+  font-size: smaller !important;
+}
+
+select{
+  font-size: smaller !important;
+  line-height: unset !important;
 }
