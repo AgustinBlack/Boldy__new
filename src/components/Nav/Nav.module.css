@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 *,
 *:after,
 *:before {
     box-sizing: border-box;
 }
-
 .div__logo{
     width: 100%;    
     display: flex;
@@ -17,9 +15,7 @@
 .logo{
     width: 50%;
     padding: 10px;
-
 }
-
 .menu {
     margin: 10px;
     font-weight: 600;
@@ -78,6 +74,7 @@
 .link:focus {
     outline: 0;
     width: auto;
+    justify-content: flex-start;
 }
 
 .link:hover:before,
@@ -95,12 +92,6 @@
     flex-shrink: 0;
     position: absolute;
     margin-left: 5px;
-    transition: 0.8s;
-}
-
-.link:hover .link__icon{
-    opacity: 0;
-    transition: opacity 0.2s ease-in; 
 }
 
 .link__icon svg {
@@ -115,7 +106,7 @@
     display: block;
     text-align: center;
     width: 100%;
-    padding: 10px;
+    margin: 0 10px 0 30px;
 }
 
 .nav__img {
@@ -136,7 +127,6 @@
         width: 98%;
         height: 70px;
     }
-
     .div__logo{
         background-color: white;
         margin-top: 10px;
@@ -147,7 +137,6 @@
         top: 11px;
         border-radius: 5px;
     }
-
     .logo{
         width: 150px;
     }
