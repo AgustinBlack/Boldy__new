@@ -30,14 +30,6 @@ const Nav = () => {
                         <span className={clases.link__title}>Productos</span>
                     {/* </div> */}
                 </Link>
-                <Link to='seccion/Guardados' className={clases.link}>
-                    {/* <div className={clases.link__elements}> */}
-                        <span className={clases.link__icon}>
-                            <img className={clases.nav__img} src={favorito} width="192" height="192" fill="currentColor" viewBox="0 0 256 256"></img>
-                        </span>
-                        <span className={clases.link__title}>Favoritos</span>                    
-                    {/* </div> */}
-                </Link>
                 <Link to='seccion/Preguntas' className={clases.link}>
                     {/* <div className={clases.link__elements}> */}
                         <span className={clases.link__icon}>
@@ -46,16 +38,6 @@ const Nav = () => {
                         <span className={clases.link__title}>FAQS</span>
                     {/* </div> */}
                 </Link>
-                {/* {
-                    isAdmin && (
-                        <Link to='seccion/User' className={clases.link}>
-                            <span className={clases.link__icon}>
-                                <img className={clases.nav__img} src={userAdmin} width="192" height="192" fill="currentColor" viewBox="0 0 256 256"></img>
-                            </span>
-                            <span className={clases.link__title}>Usuario</span>
-                        </Link>                        
-                    )
-                } */}
                 <Link to='seccion/User' className={clases.link}>
                     {/* <div className={clases.link__elements}> */}
                         <span className={clases.link__icon}>

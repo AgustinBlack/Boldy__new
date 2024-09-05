@@ -1,15 +1,10 @@
 import clases from './ItemDetail.module.css'
-import favorito from '../../assets/icons/icons8-me-gusta-24.png'
-import agregadoAFav from '../../assets/icons/icons8-heart-24.png'
 import { useState, useEffect } from 'react';
-import { useFav } from '../../context/FavContent';
 
 const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
   const imagesArray = Array.isArray(img) ? img : [img];
 
   const [mainImg, setMainImg] = useState(imagesArray[0]);
-  const { addItem, removeItem, isInFav } = useFav();
-  const [isFavourite, setIsFavourite] = useState(false);
 
   useEffect(() => {
     if (imagesArray.length > 0) {
@@ -17,31 +12,8 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
     }
   }, [imagesArray]);
 
-
-  useEffect(() => {
-    setIsFavourite(isInFav(id));
-  }, [id, isInFav]);
-
   const handleClickImg = (imgSrc) => {
     setMainImg(imgSrc);
-  };
-
-  const handleOnAdd = () => {
-    const objProdToFav = {
-      id,
-      nombre,
-      precio,
-      talle,
-      img: imagesArray
-    };
-
-    if (isFavourite) {
-      removeItem(id);
-    } else {
-      addItem(objProdToFav);
-    }
-
-    setIsFavourite(!isFavourite);
   };
 
   return (
@@ -73,12 +45,6 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
           <div className={clases.div__info}>
             <div className={clases.nombre__btn}>
               <h3 className={clases.info__nombre}>{nombre}</h3>
-              <img
-                className={clases.btn__favorito}
-                src={isFavourite ? agregadoAFav : favorito}
-                alt=""
-                onClick={handleOnAdd}
-              />
             </div>
             <div className={clases.info__data}>
               <p className={clases.info}>${precio}</p>
