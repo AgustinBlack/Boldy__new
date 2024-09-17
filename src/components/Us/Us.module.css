@@ -1,4 +1,4 @@
-.titulo {
+.titulo{
     text-align: center;
     margin-top: 20px;
 }
@@ -55,10 +55,36 @@
     filter: invert(100%);
 }
 
+.div__padre__ilustrativo{
+    display: flex;
+    flex-direction: column;
+}
+
+.padre__ilustrativo{
+    height: 400px;
+    overflow: hidden;
+}
+
+.img__ilustrativa{
+    width: 100%;
+}
+
+.txt__ilustrativo{
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: white;
+}
+
 .img__container{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.container__container{
+    margin-bottom: 40px;
 }
 
 .container__txt__encargos{
@@ -120,6 +146,14 @@
 }
 
 @media(min-width: 1000px) {
+    .titulo__primero{
+        width: 50%;
+    }
+    
+    .titulo{
+        right: 25%;
+    }
+
     .div__desc {
         border-radius: 5px;
     }
@@ -195,5 +229,31 @@
 
     .indicators__procesos{
         margin-bottom: -20px !important;
+    }
+
+    .div__padre__ilustrativo{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .padre__ilustrativo{
+        width: 104%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .img__ilustrativa{
+        height: 800px;
+    }
+
+    .txt__ilustrativo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(235, 230, 230, 0.74);
+        position: unset;
+        color: black;
     }
 }

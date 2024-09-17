@@ -2,6 +2,12 @@ import clases from './ItemDetail.module.css'
 import { useState, useEffect } from 'react';
 
 const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
+  const handleOnClick = () => {
+    setTimeout(() => {
+      window.location.href = "https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre..."
+    }, 1000)
+  }
+
   const imagesArray = Array.isArray(img) ? img : [img];
 
   const [mainImg, setMainImg] = useState(imagesArray[0]);
@@ -54,7 +60,7 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
             </div>
           </div>
           <div className={clases.div__btn}>
-            <a className={clases.btn} href="https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre...">Contactar al WhatsApp</a>
+            <a className={clases.btn} onClick={handleOnClick}>Contactar al WhatsApp</a>
           </div>
         </div>
       </div>

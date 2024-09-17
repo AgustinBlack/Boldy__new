@@ -15,6 +15,7 @@ function AdminView() {
     const [newGenre, setNewGenre] = useState('');
     const [newFootwear, setNewFootWear] = useState('');
     const [newSize, setNewSize] = useState('');
+    const [newProdDestacado, setNewProdDestacado] = useState('')
     const [imageUrls, setImageUrls] = useState([]);
     const [editingProductId, setEditingProductId] = useState(null);
 
@@ -27,7 +28,7 @@ function AdminView() {
     }, []);
 
     const handleAddOrUpdateProduct = async () => {
-        if (!newProductName || !newPrice || !newGenre || !newFootwear || !newSize || imageUrls.length === 0) {
+        if (!newProductName || !newPrice || !newGenre || !newFootwear || !newSize || !newProdDestacado || imageUrls.length === 0) {
             alert('Por favor, completa todos los campos antes de agregar o actualizar el producto.');
             return;
         }
@@ -39,6 +40,7 @@ function AdminView() {
                 genero: newGenre,
                 tipo: newFootwear,
                 talle: newSize,
+                destacado: newProdDestacado,
                 img: imageUrls
             });
             setEditingProductId(null);
@@ -49,6 +51,7 @@ function AdminView() {
                 genero: newGenre,
                 tipo: newFootwear,
                 talle: newSize,
+                destacado: newProdDestacado,
                 img: imageUrls
             });
         }
@@ -58,6 +61,7 @@ function AdminView() {
         setNewGenre('');
         setNewFootWear('');
         setNewSize('');
+        setNewProdDestacado('');
         setImageUrls([]);
         const updatedProducts = await getProducts();
         setProducts(updatedProducts);
@@ -117,6 +121,7 @@ function AdminView() {
         setNewGenre(product.genero);
         setNewFootWear(product.tipo);
         setNewSize(product.talle);
+        setNewProdDestacado(product.destacado);
         setImageUrls([product.img]);
         setEditingProductId(product.id);
     };
@@ -161,6 +166,13 @@ function AdminView() {
                     onChange={(e) => setNewSize(e.target.value)}
                 />
                 <input
+                    className={clases.inputs}
+                    type="string"
+                    placeholder="Producto destacado Si/No"
+                    value={newProdDestacado}
+                    onChange={(e) => setNewProdDestacado(e.target.value)}
+                />
+                <input
                     className={clases.input__img}
                     type="file"
                     accept="image/jpeg, image/png"
@@ -182,11 +194,13 @@ function AdminView() {
                                 className={clases.btn__edit}
                                 src={editProd}
                                 onClick={() => handleEditProduct(product)}
+                                alt='Editar'
                             />
                             <img
                                 className={clases.btn__delete}
                                 src={removeProd}
                                 onClick={() => handleDeleteProduct(product.id)}
+                                alt='Borrar'
                             />
                         </div>
                     </li>

@@ -6,31 +6,54 @@ import palmAngels from '../../assets/logos/Palm-Angels-Logo.png'
 import projectNude from '../../assets/logos/project nude.png'
 import stussy from '../../assets/logos/Stussy Logo.png'
 import supreme from '../../assets/logos/Supreme Logo.png'
+import cajasZapatillas from '../../assets/imgsWeb/cajasZapatillasIlustracion.jpg'
 import iconMail from '../../assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import iconQuote from '../../assets/icons/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import iconCheck from '../../assets/icons/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import ProdImpContainer from '../ProdImpContainer/ProdImpContainer'
 
 const Us = () => {
+  const handleOnClick = () => {
+    setTimeout(() => {
+      window.location.href = "https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre..."
+    }, 1000)
+  }
+
   return (
     <div>
       <div className={clases.slider}>
         <div className={clases.slide__track}>
-          <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={essentials} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={stussy} alt="" /></div>
-          <div className={clases.slide}><img className={clases.logos} src={supreme} alt="" /></div>
+          <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="Corteiz" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={essentials} alt="Essentials" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="Off White" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="Project Nude" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="Palm Angels" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={stussy} alt="Tussy" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={supreme} alt="Supreme" loading='lazy'/></div>
         </div>
       </div>
 
       <section className={clases.container}>
+        <section>
+          <div className={clases.div__padre__ilustrativo}>
+            <div className={clases.padre__ilustrativo}>
+              <img className={clases.img__ilustrativa} src={cajasZapatillas} alt="Illustracion" loading='lazy' rel='preload'/>
+            </div>
+            <div className={clases.txt__ilustrativo}>
+              <h4>Texto texto</h4>
+              <p>Texto</p>
+            </div>
+          </div>
+        </section>
+
         <h2 className={clases.titulo}>Bienvenidos a BOLDY</h2>
+        <div><ProdImpContainer/></div>
+
         <div className={clases.txt__container}>
           <div className={clases.div__desc}>
             <p className={clases.desc}>En Boldy, nos dedicamos a la reventa de ropa y sneakers exclusivos, combinando la cultura del streetwear con el lujo. Nuestra misión es ofrecer acceso a las zapatillas más codiciadas y a las prendas de marcas de lujo, asegurando siempre la máxima autenticidad y calidad.</p>
           </div>
+
           <div className={clases.div__desc}>
             <p className={clases.desc}>Somos más que una tienda en línea; somos un espacio donde la moda urbana cobra vida. Cada producto en nuestra tienda, desde sneakers de edición limitada hasta colaboraciones únicas de streetwear, ha sido cuidadosamente seleccionado y verificado para garantizar que sea 100% original.</p>
           </div>
@@ -102,7 +125,7 @@ const Us = () => {
             <div className={clases.div__desc}>
               <p className={clases.desc}>Para más detalles o para realizar un encargo, no dudes en contactarnos. ¡Estamos aquí para ayudarte a conseguir todo lo que necesitas!</p>
               <div className={clases.div__btn}>
-                <a className={clases.btn} href="https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre...">Contactar al WhatsApp</a>
+                <a className={clases.btn} onClick={handleOnClick}>Contactar al WhatsApp</a>
               </div>
             </div>
           </div>

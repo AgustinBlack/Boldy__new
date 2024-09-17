@@ -36,6 +36,13 @@
     border: 2px solid #15c349;
     border-radius: 20px;
     padding: 5px;
+    transition: all ease 0.5s;
+}
+
+.btn__add:hover{
+    background-color: #15c349;
+    color: white;
+    transition: all ease 0.5s;
 }
 
 .lista{

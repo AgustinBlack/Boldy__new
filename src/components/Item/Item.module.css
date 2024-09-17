@@ -59,7 +59,11 @@
 
 @media(min-width: 1000px){
     .div{
-        width: 162;
+        width: 210px;
         overflow: hidden;
+    }
+    
+    .img{
+        width: 210px;
     }
 }
