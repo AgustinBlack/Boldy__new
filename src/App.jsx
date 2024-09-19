@@ -7,9 +7,10 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Notification from './components/Notification/Notification'
 import Footer from './components/Footer/Footer'
 import Preguntas from './components/Preguntas/Preguntas'
+import FormUserSesion from './components/FormUserSesion/FormUserSesion'
 import { UseNotificationProvider } from './context/UseNotification'
 import { FiltrersProvider } from './context/FiltrersProd'
-import FormUserSesion from './components/FormUserSesion/FormUserSesion'
+import { UseLoaderSpinnerProvider } from './context/UseLoaderSpinner'
 
 function App() {
   return (
@@ -18,14 +19,16 @@ function App() {
         <FiltrersProvider>
           <Navbar/>
           <Notification/>
-          <Routes>
-            <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
-            <Route path='/type/:typeId' element={<ItemListContainer/>} />
-            <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
-            <Route path='/' element={<Us/>} />
-            <Route path='/seccion/Preguntas' element={<Preguntas/>} />
-            <Route path='/seccion/User' element={<FormUserSesion/>}/>
-          </Routes>
+          <UseLoaderSpinnerProvider>
+            <Routes>
+              <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
+              <Route path='/type/:typeId' element={<ItemListContainer/>} />
+              <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
+              <Route path='/' element={<Us/>} />
+              <Route path='/seccion/Preguntas' element={<Preguntas/>} />
+              <Route path='/seccion/User' element={<FormUserSesion/>}/>
+            </Routes>
+          </UseLoaderSpinnerProvider>
         </FiltrersProvider>
         <Footer/>
       </UseNotificationProvider>

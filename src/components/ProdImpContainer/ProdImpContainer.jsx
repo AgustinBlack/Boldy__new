@@ -3,28 +3,14 @@ import clases from './ProdImpContainer.module.css';
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/firebase/firestore/products";
 import { useAsync } from "../../hooks/useAsync";
-import { useState, useEffect } from "react";
+import { useLoader } from "../../context/UseLoaderSpinner";
 
 const ProdImpContainer = () => {
     const { typeId } = useParams();
-    const [isLoading, setIsLoading] = useState(true);
-
-    const loadingDelay = 2000;
-
-    const asyncFunction = async () => {
-        const products = await getProducts(typeId);
-        return products;
-    };
-
+    const asyncFunction = () => getProducts(typeId)
     const { data: productos } = useAsync(asyncFunction, [typeId]);
-
-    useEffect(() => {
-        if (productos) {
-            setTimeout(() => {
-                setIsLoading(false);
-            }, loadingDelay);
-        }
-    }, [productos]);
+    
+    const { isLoading } = useLoader();
 
     return (
         <div>

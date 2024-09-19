@@ -26,22 +26,22 @@ const ProductFilters = () => {
           <input
             className={clases.input}
             type="text"
-            placeholder="Search products"
+            placeholder="Buscar productos"
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <select
             className={clases.select__option}
             onChange={(e) => setSortBy(e.target.value)}
           >
-            <option value="">Select order</option>
-            <option className={clases.option} value="price_asc">Price: Low to High</option>
-            <option className={clases.option} value="price_desc">Price: High to Low</option>
+            <option value="">Selecciona orden</option>
+            <option className={clases.option} value="price_asc">Menor a Mayor precio</option>
+            <option className={clases.option} value="price_desc">Mayor a Menor precio</option>
           </select>
           <select
             className={clases.select__option}
             onChange={(e) => setSelectBrand(e.target.value)}
           >
-            <option value="">All Brands</option>
+            <option value="">Todas las Marcas</option>
             <option value="Nike">Nike</option>
             <option value="Adidas">Adidas</option>
           </select>
