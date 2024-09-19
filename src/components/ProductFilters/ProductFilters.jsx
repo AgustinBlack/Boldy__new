@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFiltrers } from "../../context/FiltrersProd";
 import clases from './ProductFilters.module.css'
-import filterPng from '../../assets/icons/filter_list_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import filterPng from '../../assets/icons/filter_list_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 
 const ProductFilters = () => {
   const { setSortBy, setSearchQuery, setSelectBrand } = useFiltrers();

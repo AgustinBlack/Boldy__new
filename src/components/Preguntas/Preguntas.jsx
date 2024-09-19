@@ -1,7 +1,7 @@
 import React from 'react';
 import clases from './Preguntas.module.css';
-import despliegaRta from '../../assets/icons/add_24dp_000000_FILL0_wght400_GRAD0_opsz24.png';
-import ocultarRta from '../../assets/icons/remove_24dp_000000_FILL0_wght400_GRAD0_opsz24.png';
+import despliegaRta from '../../assets/icons/add_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp';
+import ocultarRta from '../../assets/icons/remove_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp';
 import { useState } from 'react';
 
 const Preguntas = () => {

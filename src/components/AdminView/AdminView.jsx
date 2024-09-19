@@ -4,8 +4,8 @@ import { addDoc, deleteDoc, doc, updateDoc, collection } from 'firebase/firestor
 import { ref, getDownloadURL, uploadBytesResumable } from '@firebase/storage';
 import { db } from '../../services/firebase/firebaseConfig';
 import { storage } from '../../services/firebase/firebaseConfig';
-import removeProd from '../../assets/icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import editProd from '../..//assets/icons/edit_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import removeProd from '../../assets/icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import editProd from '../../assets/icons/edit_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 import clases from './AdminView.module.css'
 
 function AdminView() {

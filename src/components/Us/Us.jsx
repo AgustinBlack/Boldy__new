@@ -1,15 +1,15 @@
 import clases from './Us.module.css'
-import corteiz from '../../assets/logos/corteiz-the-streetwear-studio.png'
-import essentials from '../../assets/logos/essentials-logo-freelogovectors.net_-640x400.png'
-import offWhite from '../../assets/logos/Off-White-Logo.png'
-import palmAngels from '../../assets/logos/Palm-Angels-Logo.png'
-import projectNude from '../../assets/logos/project nude.png'
-import stussy from '../../assets/logos/Stussy Logo.png'
-import supreme from '../../assets/logos/Supreme Logo.png'
+import corteiz from '../../assets/logos/corteiz-the-streetwear-studio.webp'
+import essentials from '../../assets/logos/essentials-logo-freelogovectors.net_-640x400.webp'
+import offWhite from '../../assets/logos/Off-White-Logo.webp'
+import palmAngels from '../../assets/logos/Palm-Angels-Logo.webp'
+import projectNude from '../../assets/logos/project-nude.webp'
+import stussy from '../../assets/logos/Stussy-Logo.webp'
+import supreme from '../../assets/logos/Supreme-Logo.webp'
 import cajasZapatillas from '../../assets/imgsWeb/cajasZapatillasIlustracion.jpg'
-import iconMail from '../../assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import iconQuote from '../../assets/icons/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import iconCheck from '../../assets/icons/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import iconMail from '../../assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import iconQuote from '../../assets/icons/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import iconCheck from '../../assets/icons/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 import ProdImpContainer from '../ProdImpContainer/ProdImpContainer'
 
 const Us = () => {
@@ -23,13 +23,13 @@ const Us = () => {
     <div>
       <div className={clases.slider}>
         <div className={clases.slide__track}>
-          <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="Corteiz" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={essentials} alt="Essentials" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="Off White" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="Project Nude" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="Palm Angels" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={stussy} alt="Tussy" loading='lazy'/></div>
-          <div className={clases.slide}><img className={clases.logos} src={supreme} alt="Supreme" loading='lazy'/></div>
+          <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="Corteiz"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={essentials} alt="Essentials"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="Off White"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="Project Nude"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="Palm Angels"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={stussy} alt="Tussy"/></div>
+          <div className={clases.slide}><img className={clases.logos} src={supreme} alt="Supreme"/></div>
         </div>
       </div>
 
@@ -37,7 +37,7 @@ const Us = () => {
         <section>
           <div className={clases.div__padre__ilustrativo}>
             <div className={clases.padre__ilustrativo}>
-              <img className={clases.img__ilustrativa} src={cajasZapatillas} alt="Illustracion" loading='lazy' rel='preload'/>
+              <img className={clases.img__ilustrativa} src={cajasZapatillas} alt="Illustracion" rel='preload'/>
             </div>
             <div className={clases.txt__ilustrativo}>
               <h4>Texto texto</h4>

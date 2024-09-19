@@ -1,10 +1,9 @@
 import clases from './Nav.module.css'
-import favorito from '../../assets/icons/favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import inicio from '../../assets/icons/home_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import productos from '../../assets/icons/shopping_bag_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import boldy from '../../assets/icons/boldy.png'
-import question from '../../assets/icons/help_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import userAdmin from '../../assets/icons/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
+import inicio from '../../assets/icons/home_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import productos from '../../assets/icons/shopping_bag_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import boldy from '../../assets/icons/boldy.webp'
+import question from '../../assets/icons/help_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
+import userAdmin from '../../assets/icons/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 import { Link } from "react-router-dom"
 
 const Nav = () => {

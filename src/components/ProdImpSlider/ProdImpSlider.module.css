@@ -6,6 +6,7 @@
     border-radius: 10px;
     width: 200px;
     transition: all ease 0.5s;
+    opacity: 1;
 }
 
 .container:hover{
@@ -17,9 +18,23 @@
 .img{
     width: 200px;
     border-radius: 10px;
+    display: block;
 }
 
 .nombre{
     padding: 10px;
     color: black;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #333;
 }
