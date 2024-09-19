@@ -4,13 +4,21 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/firebase/firestore/products";
 import { useAsync } from "../../hooks/useAsync";
 import { useLoader } from "../../context/UseLoaderSpinner";
+import { useEffect } from "react";
 
 const ProdImpContainer = () => {
     const { typeId } = useParams();
-    const asyncFunction = () => getProducts(typeId)
+    const asyncFunction = async () => {
+        const products = await getProducts(typeId);
+        setIsLoading(false);
+        return products;
+    };
     const { data: productos } = useAsync(asyncFunction, [typeId]);
     
-    const { isLoading } = useLoader();
+    const { isLoading, setIsLoading } = useLoader();
+    useEffect(() => {
+        setIsLoading(true)
+    }, [setIsLoading])
 
     return (
         <div>

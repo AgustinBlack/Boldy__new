@@ -5,18 +5,27 @@ import { useAsync } from "../../hooks/useAsync";
 import { useFiltrers } from "../../context/FiltrersProd";
 import { useLoader } from '../../context/UseLoaderSpinner'
 import clases from './ItemListContainer.module.css'
+import { useEffect } from "react";
 
 const ItemListContainer = () => {
     
   const { typeId } = useParams()
-  const asyncFunction = () => getProducts(typeId)
+  const asyncFunction = async () => {
+    const products = await getProducts(typeId);
+    setIsLoading(false);
+    return products;
+  };
   const { data: productos } = useAsync(asyncFunction, [typeId])
 
   const { sortProducts, filtrerProducts, filterByBrand, selectBrand } = useFiltrers()
   const filteredByBrand = filterByBrand(productos, selectBrand)
   const filtreredProducts = sortProducts(filtrerProducts(filteredByBrand))
 
-  const { isLoading } = useLoader()
+  const { isLoading, setIsLoading } = useLoader()
+
+  useEffect(() => {
+      setIsLoading(true)
+  }, [setIsLoading])
   
   return (
     <div>
