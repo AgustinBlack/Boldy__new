@@ -44,8 +44,8 @@
     transition: 0.5s all ease;
 }
 
-.div__btn__gestor{
-    width: auto;
+.div__btn__gestor, .div__txt{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,6 +71,13 @@
     background-color: rgb(56, 140, 218);
     color: white;
     transition: 0.5s all ease;
+}
+
+.txt{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(240 236 236);
 }
 
 @media(min-width: 1000px) {
