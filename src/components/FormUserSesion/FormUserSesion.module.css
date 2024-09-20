@@ -35,9 +35,39 @@
     background-color: white;
     border: 2px solid rgb(56, 140, 218);
     width: 50%;
+    transition: 0.5s all ease;
 }
 
 .btn:hover{
+    background-color: rgb(56, 140, 218);
+    color: white;
+    transition: 0.5s all ease;
+}
+
+.div__btn__gestor{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__gestor{
+    background-color: white;
+    border: 2px solid rgb(56, 140, 218);
+    padding: 5px;
+    border-radius: 40px;
+    color: black;
+    font-size: 0.9em;
+    width: 250px;
+    text-align: center;
+    display: flex;
+    transition: 0.5s all ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn__gestor:hover{
     background-color: rgb(56, 140, 218);
     color: white;
     transition: 0.5s all ease;

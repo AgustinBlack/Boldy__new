@@ -1,13 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import AdminView from '../AdminView/AdminView'
 import clases from './FormUserSesion.module.css'
+import { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 
 const FormUserSesion = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isAdmin, setIsAdmin] = useState(false);
+    const { isAdmin, setIsAdmin } = useAuth()
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const navigate = useNavigate()
 
@@ -27,10 +27,9 @@ const FormUserSesion = () => {
             } else {
                 setIsAdmin(false);
             }
-
-            setIsLoggedIn(true);
+            setIsLoggedIn(true)
         }
-    }, []);
+    }, [setIsAdmin]);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -49,42 +48,54 @@ const FormUserSesion = () => {
 
         if (email === adminEmail && password === adminPassword) {
             setIsAdmin(true);
+            setIsLoggedIn(true)
+            navigate('/seccion/gestorProductos')
         } else {
             setIsAdmin(false);
-            navigate('/')
+            setIsLoggedIn(true)
+            navigate('/');
         }
-
-        setIsLoggedIn(true);
     };
-
-    if (isAdmin) {
-        return <AdminView />;
-    }
 
     return (
         <div className={clases.loginContainer}>
-            <h2 className={clases.titulo}>Iniciar sesión</h2>
-            <form className={clases.formLogin} onSubmit={handleLogin}>
-                <input
-                    className={clases.inputs}
-                    type="email"
-                    placeholder="Correo electrónico"
-                    value={email}
-                    autoComplete='username'
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    className={clases.inputs}
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    autoComplete='current-pasword'
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <div className={clases.div__btn}>
-                    <button className={clases.btn} type="submit">Iniciar sesión</button>                    
+            {!isLoggedIn ? (
+                <div>
+                    <h2 className={clases.titulo}>Iniciar sesión</h2>
+                    <form className={clases.formLogin} onSubmit={handleLogin}>
+                        <input
+                            className={clases.inputs}
+                            type="email"
+                            placeholder="Correo electrónico"
+                            value={email}
+                            autoComplete='username'
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <input
+                            className={clases.inputs}
+                            type="password"
+                            placeholder="Contraseña"
+                            value={password}
+                            autoComplete='current-pasword'
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <div className={clases.div__btn}>
+                            <button className={clases.btn} type="submit">Iniciar sesión</button>                    
+                        </div>
+                    </form>
                 </div>
-            </form>
+            ):(
+                isAdmin ? (
+                    <div className={clases.div__btn__gestor}>
+                        <Link className={clases.btn__gestor} to={'seccion/gestorProductos'}>Gestiona tus productos</Link>
+                    </div>
+                ):(
+                    <div className={clases.div__txt}>
+                        <p className={clases.txt}>Ya ingresaste a la Web!</p>
+                    </div>
+                )
+            )}
+            
         </div>
     );
 }

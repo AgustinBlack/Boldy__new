@@ -11,24 +11,29 @@ import FormUserSesion from './components/FormUserSesion/FormUserSesion'
 import { UseNotificationProvider } from './context/UseNotification'
 import { FiltrersProvider } from './context/FiltrersProd'
 import { UseLoaderSpinnerProvider } from './context/UseLoaderSpinner'
+import AdminView from './components/AdminView/AdminView'
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
   return (
     <BrowserRouter>
       <UseNotificationProvider>
         <FiltrersProvider>
-          <Navbar/>
-          <Notification/>
-          <UseLoaderSpinnerProvider>
-            <Routes>
-              <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
-              <Route path='/type/:typeId' element={<ItemListContainer/>} />
-              <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
-              <Route path='/' element={<Us/>} />
-              <Route path='/seccion/Preguntas' element={<Preguntas/>} />
-              <Route path='/seccion/User' element={<FormUserSesion/>}/>
-            </Routes>
-          </UseLoaderSpinnerProvider>
+          <AuthProvider>
+            <Navbar/>
+            <Notification/>
+            <UseLoaderSpinnerProvider>
+              <Routes>
+                <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
+                <Route path='/type/:typeId' element={<ItemListContainer/>} />
+                <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
+                <Route path='/' element={<Us/>} />
+                <Route path='/seccion/Preguntas' element={<Preguntas/>} />
+                <Route path='/seccion/User' element={<FormUserSesion/>}/>
+                <Route path='/seccion/gestorProductos' element={<AdminView/>} />
+              </Routes>
+            </UseLoaderSpinnerProvider>
+          </AuthProvider>
         </FiltrersProvider>
         <Footer/>
       </UseNotificationProvider>
