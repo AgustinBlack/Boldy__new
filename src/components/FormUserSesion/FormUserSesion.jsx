@@ -1,15 +1,14 @@
-import React from 'react'
-import clases from './FormUserSesion.module.css'
-import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import clases from './FormUserSesion.module.css';
 
 const FormUserSesion = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { isAdmin, setIsAdmin } = useAuth()
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const navigate = useNavigate()
+    const { isAdmin, setIsAdmin } = useAuth();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
 
     const adminEmail = 'admin@example.com';
     const adminPassword = 'adminpassword';
@@ -20,18 +19,14 @@ const FormUserSesion = () => {
         const savedIsAdmin = localStorage.getItem('isAdmin') === 'true';
         const savedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-        if (savedEmail && savedPassword) {
-            setEmail(savedEmail);
-            setPassword(savedPassword);
-
-            if (savedEmail === adminEmail && savedPassword === adminPassword) {
-                setIsAdmin(true);
-            } else {
-                setIsAdmin(false);
-            }
-            setIsLoggedIn(true)
+        if (savedIsLoggedIn) {
+            setIsLoggedIn(true);
+            setEmail(savedEmail || '');
+            setPassword(savedPassword || '');
+            setIsAdmin(savedIsAdmin);
         }
     }, [setIsAdmin]);
+
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -50,15 +45,15 @@ const FormUserSesion = () => {
 
         if (email === adminEmail && password === adminPassword) {
             setIsAdmin(true);
-            setIsLoggedIn(true)
-            localStorage.setItem('isAdmin', true);
-            localStorage.setItem('isLoggedIn', true);
+            setIsLoggedIn(true);
+            localStorage.setItem('isAdmin', 'true');
+            localStorage.setItem('isLoggedIn', 'true');
             navigate('/seccion/gestorProductos')
         } else {
             setIsAdmin(false);
-            setIsLoggedIn(true)
-            localStorage.setItem('isAdmin', false);
-            localStorage.setItem('isLoggedIn', true);
+            setIsLoggedIn(true);
+            localStorage.setItem('isAdmin', 'false');
+            localStorage.setItem('isLoggedIn', 'true');
             navigate('/');
         }
     };
@@ -82,7 +77,7 @@ const FormUserSesion = () => {
                             type="password"
                             placeholder="Contraseña"
                             value={password}
-                            autoComplete='current-pasword'
+                            autoComplete='current-password'
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <div className={clases.div__btn}>
@@ -90,20 +85,21 @@ const FormUserSesion = () => {
                         </div>
                     </form>
                 </div>
-            ):(
+            ) : (
                 isAdmin ? (
                     <div className={clases.div__btn__gestor}>
-                        <Link className={clases.btn__gestor} to={'seccion/gestorProductos'}>Gestiona tus productos</Link>
+                        <Link className={clases.btn__gestor} to={'/seccion/gestorProductos'}>
+                            Gestiona tus productos
+                        </Link>
                     </div>
-                ):(
+                ) : (
                     <div className={clases.div__txt}>
                         <p className={clases.txt}>Ya ingresaste a la Web!</p>
                     </div>
                 )
             )}
-            
         </div>
     );
-}
+};
 
-export default FormUserSesion
+export default FormUserSesion;

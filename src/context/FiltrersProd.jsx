@@ -6,6 +6,7 @@ export const FiltrersProvider = ({ children }) => {
     const [sortBy, setSortBy] = useState('')
     const [searchQuery, setSearchQuery] = useState('')
     const [selectBrand, setSelectBrand] = useState('')
+    const [isSearching, setIsSearching] = useState(false)
 
     const sortProducts = (prod) => {
         let sortedProducts = [...prod]
@@ -34,7 +35,7 @@ export const FiltrersProvider = ({ children }) => {
     }
 
     return (
-        <FiltrersContext.Provider value={{ sortBy, setSortBy, searchQuery, setSearchQuery, sortProducts, filtrerProducts, selectBrand, setSelectBrand, filterByBrand}}>
+        <FiltrersContext.Provider value={{ isSearching, setIsSearching, sortBy, setSortBy, searchQuery, setSearchQuery, sortProducts, filtrerProducts, selectBrand, setSelectBrand, filterByBrand}}>
             {children}
         </FiltrersContext.Provider>
     )

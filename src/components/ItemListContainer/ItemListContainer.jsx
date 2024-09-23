@@ -8,7 +8,7 @@ import clases from './ItemListContainer.module.css'
 import { useEffect } from "react";
 
 const ItemListContainer = () => {
-    
+
   const { typeId } = useParams()
   const asyncFunction = async () => {
     const products = await getProducts(typeId);
@@ -17,34 +17,40 @@ const ItemListContainer = () => {
   };
   const { data: productos } = useAsync(asyncFunction, [typeId])
 
-  const { sortProducts, filtrerProducts, filterByBrand, selectBrand } = useFiltrers()
+  const { isSearching, setIsSearching, sortProducts, filtrerProducts, filterByBrand, selectBrand, setSearchQuery } = useFiltrers()
   const filteredByBrand = filterByBrand(productos, selectBrand)
   const filtreredProducts = sortProducts(filtrerProducts(filteredByBrand))
 
   const { isLoading, setIsLoading } = useLoader()
 
   useEffect(() => {
-      setIsLoading(true)
-  }, [setIsLoading])
-  
+    setIsLoading(true);
+    if (!isSearching) {
+      setSearchQuery('');
+    }
+    return () => {
+      setIsSearching(false);
+    };
+  }, [setIsLoading, setSearchQuery, isSearching, setIsSearching]);
+
   return (
     <div>
-        {isLoading ? (
-          <div className={clases.spinner}>
-            <div></div>   
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-          </div>
-        ) : (
-          <ItemList productos={filtreredProducts} children={'Productos'}/>
-        )}
+      {isLoading ? (
+        <div className={clases.spinner}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      ) : (
+        <ItemList productos={filtreredProducts} children={'Productos'} />
+      )}
     </div>
   )
 }

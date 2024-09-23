@@ -12,22 +12,23 @@ import FormUserSesion from '../FormUserSesion/FormUserSesion'
 import iconSearch from '../../assets/icons/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import { useFiltrers } from '../../context/FiltrersProd'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 
 const Home = () => {
-  const { setSearchQuery } = useFiltrers()
+  const { setSearchQuery, setIsSearching } = useFiltrers()
   const navigate = useNavigate()
-  const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+  const handleOnSearch = (searchValue) => {
+    setSearchQuery(searchValue);
+    if (searchValue.trim()) {
+      setIsSearching(true);
+      navigate('seccion/Productos');
+    }
   };
 
   const handleOnClick = () => {
-    if (inputValue.trim()) {
-      setSearchQuery(inputValue);
-      navigate('seccion/Productos');
-    }
+    const searchInput = document.querySelector('.' + clases.input);
+    const searchValue = searchInput.value.trim();
+    handleOnSearch(searchValue);
   };
 
   return (
@@ -66,11 +67,11 @@ const Home = () => {
         </div>
 
         <div><ProdImpContainer/></div>
-{/* 
+
         <div className={clases.input__container}>
-          <input type="text" placeholder='Buscar Productos...' className={clases.input} value={inputValue} onChange={handleInputChange} />
+          <input type="text" placeholder='Buscar Productos...' className={clases.input}/>
           <img className={clases.img__icon} src={iconSearch} alt="Buscar" onClick={handleOnClick}/>
-        </div> */}
+        </div>
         
         <FormUserSesion />
       </section>

@@ -7,9 +7,19 @@ import userAdmin from '../../assets/icons/person_24dp_000000_FILL0_wght400_GRAD0
 import usImg from '../../assets/icons/info_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import { Link } from "react-router-dom"
 import { useAuth } from '../../context/AuthContext'
+import { useState, useEffect } from 'react'
 
 const Nav = () => {
-    const { isAdmin } = useAuth()
+    const { isAdmin, setIsAdmin } = useAuth();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const savedIsAdmin = localStorage.getItem('isAdmin') === 'true';
+        const savedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        setIsAdmin(savedIsAdmin);
+        setIsLoggedIn(savedIsLoggedIn);
+    }, [setIsAdmin]);
 
     return (
         <div>
@@ -41,7 +51,7 @@ const Nav = () => {
                     </span>
                     <span className={clases.link__title}>FAQS</span>
                 </Link>
-                {isAdmin && (
+                {isLoggedIn && isAdmin && (
                     <Link to='seccion/gestorProductos' className={clases.link}>
                         <span className={clases.link__icon}>
                             <img className={clases.nav__img} src={userAdmin} width="192" height="192" fill="currentColor" viewBox="0 0 256 256" alt='Logos Nav'></img>
