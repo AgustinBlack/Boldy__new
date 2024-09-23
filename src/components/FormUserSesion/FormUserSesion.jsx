@@ -17,6 +17,8 @@ const FormUserSesion = () => {
     useEffect(() => {
         const savedEmail = localStorage.getItem('email');
         const savedPassword = localStorage.getItem('password');
+        const savedIsAdmin = localStorage.getItem('isAdmin') === 'true';
+        const savedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
         if (savedEmail && savedPassword) {
             setEmail(savedEmail);
@@ -49,10 +51,14 @@ const FormUserSesion = () => {
         if (email === adminEmail && password === adminPassword) {
             setIsAdmin(true);
             setIsLoggedIn(true)
+            localStorage.setItem('isAdmin', true);
+            localStorage.setItem('isLoggedIn', true);
             navigate('/seccion/gestorProductos')
         } else {
             setIsAdmin(false);
             setIsLoggedIn(true)
+            localStorage.setItem('isAdmin', false);
+            localStorage.setItem('isLoggedIn', true);
             navigate('/');
         }
     };

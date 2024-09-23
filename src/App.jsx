@@ -1,7 +1,6 @@
 import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import Us from './components/Us/Us'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Notification from './components/Notification/Notification'
@@ -13,6 +12,8 @@ import { FiltrersProvider } from './context/FiltrersProd'
 import { UseLoaderSpinnerProvider } from './context/UseLoaderSpinner'
 import AdminView from './components/AdminView/AdminView'
 import { AuthProvider } from './context/AuthContext'
+import Home from './components/Home/Home'
+import Us from './components/Us/Us'
 
 function App() {
   return (
@@ -27,10 +28,11 @@ function App() {
                 <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'} />}/>
                 <Route path='/type/:typeId' element={<ItemListContainer/>} />
                 <Route path='/detail/:productoId' element={<ItemDetailContainer/>} />
-                <Route path='/' element={<Us/>} />
+                <Route path='/' element={<Home/>} />
                 <Route path='/seccion/Preguntas' element={<Preguntas/>} />
                 <Route path='/seccion/User' element={<FormUserSesion/>}/>
                 <Route path='/seccion/gestorProductos' element={<AdminView/>} />
+                <Route path='/seccion/Nosotros' element={<Us/>} />
               </Routes>
             </UseLoaderSpinnerProvider>
           </AuthProvider>
