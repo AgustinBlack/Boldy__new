@@ -10,11 +10,12 @@
     .container__prods{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         margin: 110px 32px 0;
     }   
-
+    
     .div{
-        width: 100%;
+        gap: 30px;
+        width: 70%;
     }
 }

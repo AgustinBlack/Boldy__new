@@ -3,7 +3,6 @@ import clases from '../Home/Home.module.css'
 import iconMail from '../../assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 import iconQuote from '../../assets/icons/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
 import iconCheck from '../../assets/icons/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.webp'
-import FormUserSesion from '../FormUserSesion/FormUserSesion'
 
 const Us = () => {
     const handleOnClick = () => {
@@ -13,7 +12,7 @@ const Us = () => {
     }
 
     return (
-        <div>
+        <div className={clases.container__us}>
             <div className={clases.txt__container}>
                 <div className={clases.div__desc}>
                     <p className={clases.desc}>Somos más que una tienda en línea; somos un espacio donde la moda urbana cobra vida. Cada producto en nuestra tienda, desde sneakers de edición limitada hasta colaboraciones únicas de streetwear, ha sido cuidadosamente seleccionado y verificado para garantizar que sea 100% original.</p>

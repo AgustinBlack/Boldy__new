@@ -17,7 +17,18 @@ const ItemListContainer = () => {
   };
   const { data: productos } = useAsync(asyncFunction, [typeId])
 
-  const { isSearching, setIsSearching, sortProducts, filtrerProducts, filterByBrand, selectBrand, setSearchQuery } = useFiltrers()
+  const { 
+    isSearching,
+    setIsSearching, 
+    sortProducts, 
+    filtrerProducts, 
+    filterByBrand, 
+    selectBrand, 
+    setSearchQuery, 
+    // filterByPrice, 
+    // priceRange, 
+    // setPriceRange 
+  } = useFiltrers()
   const filteredByBrand = filterByBrand(productos, selectBrand)
   const filtreredProducts = sortProducts(filtrerProducts(filteredByBrand))
 
@@ -36,18 +47,21 @@ const ItemListContainer = () => {
   return (
     <div>
       {isLoading ? (
-        <div className={clases.spinner}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className={clases.container__spinner}>
+          <div className={clases.spinner}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>          
         </div>
+
       ) : (
         <ItemList productos={filtreredProducts} children={'Productos'} />
       )}

@@ -76,7 +76,6 @@
 }
 
 @keyframes spinner-fzua35 {
-
     0%,
     10%,
     20%,
@@ -92,5 +91,11 @@
 
     50% {
         transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+    }
+}
+
+@media(min-width: 1000px) {
+    .container__spinner{
+        margin-top: 120px;
     }
 }
