@@ -12,6 +12,7 @@ const Footer = () => {
             <h4 className={clases.titulo}>Navegacion</h4>
             <div className={clases.div__data}>
                 <p className={clases.data}><Link to='/'>Inicio</Link></p>
+                <p className={clases.data}><Link to='seccion/Nosotros'>Nosotros</Link></p>
                 <p className={clases.data}><Link to='seccion/Productos'>Productos</Link></p>
                 <p className={clases.data}><Link to='seccion/Preguntas'>FAQS</Link></p>
             </div>
@@ -25,7 +26,7 @@ const Footer = () => {
         <div className={clases.div__padre}>
             <h4 className={clases.titulo}>Contacto</h4>
             <div className={clases.div__data}>
-                <p className={clases.data}><img className={clases.img} src={gmail} alt="Mail" /> Mail:</p>
+                <p className={clases.data}><img className={clases.img} src={gmail} alt="Mail" /> Mail</p>
                 <p className={clases.data}><img className={clases.img} src={phone} alt="Telefono" /> Numero de Telefono</p>
                 <p className={clases.data}><img className={clases.img} src={instagram} alt="Instagram" /> Instagram</p>
             </div>
