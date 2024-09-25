@@ -7,7 +7,7 @@ const ProductFilters = () => {
   const { setSortBy, setSearchQuery, setSelectBrand, setPriceRange, priceRange } = useFiltrers();
   const [showFilters, setShowFilters] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1000);
-  const [rangeValue, setRangeValue] = useState(50);
+  const [rangeValue, setRangeValue] = useState(priceRange.max);  // Guardar el valor temporal del rango de precio
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,14 +30,18 @@ const ProductFilters = () => {
 
   const handleToggleFilters = () => {
     if (!isLargeScreen) {
-      setShowFilters(!showFilters);
+     setShowFilters(!showFilters);
     }
   };
 
   const handleOnRange = (e) => {
     const value = parseInt(e.target.value);
     setRangeValue(value);
-    setPriceRange({ ...priceRange, max: value });
+  }
+
+  const handleConfirmRange = () => {
+    console.log("Rango confirmado:", rangeValue);
+    setPriceRange({ ...priceRange, max: rangeValue });
   }
 
   return (
@@ -54,19 +58,27 @@ const ProductFilters = () => {
 
       {showFilters && (
         <div className={clases.filtersContainer}>
-          <input className={clases.input} type="text" placeholder="Buscar productos" onChange={(e) => setSearchQuery(e.target.value)}/>
+          <input className={clases.input} type="text" placeholder="Buscar productos" onChange={(e) => setSearchQuery(e.target.value)} />
+          
           <select className={clases.select__option} onChange={(e) => setSortBy(e.target.value)}>
             <option value="">Selecciona orden</option>
             <option className={clases.option} value="price_asc">Menor a Mayor precio</option>
             <option className={clases.option} value="price_desc">Mayor a Menor precio</option>
           </select>
+          
           <select className={clases.select__option} onChange={(e) => setSelectBrand(e.target.value)}>
             <option value="">Todas las Marcas</option>
             <option value="Nike">Nike</option>
             <option value="Adidas">Adidas</option>
           </select>
-          <div>
-            <b>$50</b><input type="range" min={50} max={500} onChange={handleOnRange}/><b>${rangeValue}</b>
+
+          <div className={clases.container__precio__rango}>
+            <div className={clases.input__precio__rango}>
+              <b>$50</b>
+              <input type="range" min={50} max={500} value={rangeValue} onChange={handleOnRange} />
+              <b>${rangeValue}</b>
+            </div>
+            <button className={clases.confirm__btn} onClick={handleConfirmRange}>Confirmar Rango</button>
           </div>
         </div>
       )}

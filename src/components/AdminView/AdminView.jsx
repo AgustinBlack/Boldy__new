@@ -160,7 +160,7 @@ function AdminView() {
                 />
                 <input
                     className={clases.inputs}
-                    type="number"
+                    type="number, string"
                     placeholder="Talle del producto"
                     value={newSize}
                     onChange={(e) => setNewSize(e.target.value)}

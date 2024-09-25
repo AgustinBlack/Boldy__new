@@ -8,7 +8,6 @@ import clases from './ItemListContainer.module.css'
 import { useEffect } from "react";
 
 const ItemListContainer = () => {
-
   const { typeId } = useParams()
   const asyncFunction = async () => {
     const products = await getProducts(typeId);
@@ -17,20 +16,12 @@ const ItemListContainer = () => {
   };
   const { data: productos } = useAsync(asyncFunction, [typeId])
 
-  const { 
-    isSearching,
-    setIsSearching, 
-    sortProducts, 
-    filtrerProducts, 
-    filterByBrand, 
-    selectBrand, 
-    setSearchQuery, 
-    // filterByPrice, 
-    // priceRange, 
-    // setPriceRange 
-  } = useFiltrers()
-  const filteredByBrand = filterByBrand(productos, selectBrand)
-  const filtreredProducts = sortProducts(filtrerProducts(filteredByBrand))
+  const { isSearching, setIsSearching, sortProducts, filterProducts, filterByBrand, selectBrand, setSearchQuery, priceRange, setPriceRange, filterByPrice } = useFiltrers()
+
+  const filteredByPrice = filterByPrice(productos)
+  const filteredByBrand = filterByBrand(filteredByPrice)
+  const filteredBySearch = filterProducts(filteredByBrand)
+  const filtreredProducts = sortProducts(filteredBySearch)
 
   const { isLoading, setIsLoading } = useLoader()
 
@@ -49,7 +40,6 @@ const ItemListContainer = () => {
       {isLoading ? (
         <div className={clases.container__spinner}>
           <div className={clases.spinner}>
-            <div></div>
             <div></div>
             <div></div>
             <div></div>

@@ -11,15 +11,11 @@
     height: 24px;
 }
 
-.input{
-    padding: 1px;
+.input, .select__option{
+    padding: 5px;
     border-radius: 3px;
     border: 1px solid black;
-}
-
-.select__option{
-    border-radius: 3px;
-    border: 1px solid black;
+    width: 100%;
 }
 
 .option:hover{
@@ -31,6 +27,33 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+}
+
+.container__precio__rango{
+    display: flex;
+    flex-direction: column;
+}
+
+.input__precio__rango{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.confirm__btn{
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid rgb(49, 106, 205);
+    margin-top: 10px;
+    transition: all ease 0.5s;
+}
+
+.confirm__btn:hover{
+    background-color: rgb(49, 106, 205);
+    color: white;
+    transition: all ease 0.5s;
 }
 
 @media(min-width: 1000px) {
@@ -38,10 +61,6 @@
         margin-left: 10px;
         height: 20px;
         flex-direction: column;
-        width: auto;
-    }
-
-    .input, .select__option{
-        width: 200px;
+        width: 25%;
     }
 }

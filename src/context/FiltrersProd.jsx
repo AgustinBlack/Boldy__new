@@ -7,7 +7,7 @@ export const FiltrersProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState('')
     const [selectBrand, setSelectBrand] = useState('')
     const [isSearching, setIsSearching] = useState(false)
-    const [priceRange, setPriceRange] = useState({ min: 50, max: 500 })
+    const [priceRange, setPriceRange] = useState({ min: 50, max: 500 })  // Rango inicial
 
     const sortProducts = (prod) => {
         let sortedProducts = [...prod]
@@ -24,8 +24,8 @@ export const FiltrersProvider = ({ children }) => {
         return sortedProducts
     }
 
-    const filtrerProducts = (prod) => {
-        return prod.filter(product => 
+    const filterProducts = (prod) => {
+        return prod.filter(product =>
             product.nombre.toLowerCase().includes(searchQuery.toLowerCase())
         )
     }
@@ -36,13 +36,30 @@ export const FiltrersProvider = ({ children }) => {
     }
 
     const filterByPrice = (prod) => {
-        return prod.filter(product => 
+        if (!prod) return [];
+        return prod.filter(product =>
             product.precio >= priceRange.min && product.precio <= priceRange.max
         );
-    }
+    };    
 
     return (
-        <FiltrersContext.Provider value={{ setPriceRange, filterByPrice, isSearching, setIsSearching, sortBy, setSortBy, searchQuery, setSearchQuery, sortProducts, filtrerProducts, selectBrand, setSelectBrand, filterByBrand}}>
+        <FiltrersContext.Provider
+            value={{
+                priceRange,
+                setPriceRange,
+                filterByPrice,
+                isSearching,
+                setIsSearching,
+                sortBy,
+                setSortBy,
+                searchQuery,
+                setSearchQuery,
+                sortProducts,
+                filterProducts,
+                selectBrand,
+                setSelectBrand,
+                filterByBrand
+            }}>
             {children}
         </FiltrersContext.Provider>
     )
