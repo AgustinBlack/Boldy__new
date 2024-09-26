@@ -16,6 +16,12 @@
     border: none;
     border-bottom: 2px solid rgb(227 6 19);
     width: 100%;
+    background-color: white;
+    color: black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
 }
 
 .option:hover{
