@@ -13,8 +13,8 @@
 
 .input, .select__option{
     padding: 5px;
-    border-radius: 20px;
-    border: 2px solid rgb(227 6 19);
+    border: none;
+    border-bottom: 2px solid rgb(227 6 19);
     width: 100%;
 }
 
