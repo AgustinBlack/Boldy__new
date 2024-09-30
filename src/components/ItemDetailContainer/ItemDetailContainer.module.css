@@ -100,7 +100,7 @@
     }
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1024px) {
     .div{
         flex-direction: row;
     }

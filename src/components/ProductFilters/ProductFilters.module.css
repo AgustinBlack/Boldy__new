@@ -63,7 +63,7 @@
     transition: all ease 0.5s;
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1024px) {
     .container{
         margin-left: 10px;
         height: 20px;

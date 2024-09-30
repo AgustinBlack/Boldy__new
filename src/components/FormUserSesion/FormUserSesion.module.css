@@ -19,6 +19,10 @@
     border: 0;
     border-bottom: 1px solid;
     width: 75%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
 }
 
 .div__btn{
@@ -80,7 +84,7 @@
     background-color: rgb(240 236 236);
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1024px) {
     .inputs{
         width: 200px;
     }

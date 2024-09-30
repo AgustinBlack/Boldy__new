@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1024px) {
     .container__prods{
         display: flex;
         flex-direction: row;
