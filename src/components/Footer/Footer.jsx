@@ -26,9 +26,9 @@ const Footer = () => {
         <div className={clases.div__padre}>
             <h4 className={clases.titulo}>Contacto</h4>
             <div className={clases.div__data}>
-                <p className={clases.data}><img className={clases.img} src={gmail} alt="Mail" /> Mail</p>
-                <p className={clases.data}><img className={clases.img} src={phone} alt="Telefono" /> Numero de Telefono</p>
-                <p className={clases.data}><img className={clases.img} src={instagram} alt="Instagram" /> Instagram</p>
+                <a className={clases.links} href=""><p className={clases.data}><img className={clases.img} src={gmail} alt="Mail" /> Mail</p></a>
+                <a className={clases.links} href=""><p className={clases.data}><img className={clases.img} src={phone} alt="Telefono" /> Numero de Telefono</p></a>
+                <a className={clases.links} href="https://www.instagram.com/boldy.ar/"><p className={clases.data}><img className={clases.img} src={instagram} alt="Instagram" /> Instagram</p></a>
             </div>
         </div>
     </div>

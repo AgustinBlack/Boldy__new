@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import clases from './FormUserSesion.module.css';
+import { useNotification } from '../../context/UseNotification';
 
 const FormUserSesion = () => {
     const [email, setEmail] = useState('');
@@ -9,6 +10,7 @@ const FormUserSesion = () => {
     const { isAdmin, setIsAdmin } = useAuth();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
+    const { showNotification } = useNotification()
 
     const adminEmail = 'admin@example.com';
     const adminPassword = 'adminpassword';
@@ -32,7 +34,7 @@ const FormUserSesion = () => {
         e.preventDefault();
 
         if (!email.trim() || !password.trim()) {
-            alert('Usuario o Contraseña se encuentra vacío. Por favor, complete ambos campos.');
+            showNotification('Usuario o Contraseña se encuentra vacío. Por favor, complete ambos campos.', 'error');
             return;
         }
 
@@ -49,6 +51,7 @@ const FormUserSesion = () => {
             localStorage.setItem('isAdmin', 'true');
             localStorage.setItem('isLoggedIn', 'true');
             navigate('/seccion/gestorProductos')
+            showNotification('Iniciaste Sesion correctamente.', 'info')
         } else {
             setIsAdmin(false);
             setIsLoggedIn(true);

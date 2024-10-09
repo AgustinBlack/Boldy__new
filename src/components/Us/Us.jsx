@@ -52,7 +52,7 @@ const Us = () => {
                                     <img src={iconQuote} className={`d-block ${clases.img__procesos}`} alt="..." />
                                 </div>
                                 <div className={clases.container__txt__encargos}>
-                                    <h3 className={clases.txt__encargos}>Cotizacion Personalizada</h3>
+                                    <h3 className={clases.txt__encargos}>Cotización Personalizada</h3>
                                     <p className={clases.txt__encargos}>Nosotros te enviaremos una cotización detallada del producto, incluyendo costos de envío y cualquier otro detalle relevante.</p>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const Us = () => {
                                     <img src={iconCheck} className={`d-block ${clases.img__procesos}`} alt="..." />
                                 </div>
                                 <div className={clases.container__txt__encargos}>
-                                    <h3 className={clases.txt__encargos}>Confirmacion del Pedido</h3>
+                                    <h3 className={clases.txt__encargos}>Confirmación del Pedido</h3>
                                     <p className={clases.txt__encargos}>Si estás de acuerdo con la cotización, confirma tu pedido y comenzaremos a gestionarlo de inmediato.</p>
                                 </div>
                             </div>

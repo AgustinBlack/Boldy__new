@@ -7,7 +7,7 @@ const ProductFilters = () => {
   const { setSortBy, setSearchQuery, setSelectBrand, setPriceRange, priceRange } = useFiltrers();
   const [showFilters, setShowFilters] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1000);
-  const [rangeValue, setRangeValue] = useState(priceRange.max);  // Guardar el valor temporal del rango de precio
+  const [rangeValue, setRangeValue] = useState(priceRange.max);
 
   useEffect(() => {
     const handleResize = () => {

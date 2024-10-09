@@ -29,3 +29,8 @@
     height: 21px;
     margin-right: 5px;
 }
+
+.links{
+    text-decoration: none;
+    color: white;
+}
