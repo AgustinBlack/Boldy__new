@@ -40,3 +40,7 @@ select{
 button{
   font-size: smaller !important;
 }
+
+ul{
+  padding-left: 0 !important;
+}

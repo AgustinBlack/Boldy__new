@@ -9,28 +9,8 @@ import supreme from '../../assets/logos/Supreme-Logo.webp'
 import cajasZapatillas from '../../assets/imgsWeb/cajasZapatillasIlustracion.jpg'
 import ProdImpContainer from '../ProdImpContainer/ProdImpContainer'
 import FormUserSesion from '../FormUserSesion/FormUserSesion'
-import iconSearch from '../../assets/icons/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import { useFiltrers } from '../../context/FiltrersProd'
-import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  const { setSearchQuery, setIsSearching } = useFiltrers()
-  const navigate = useNavigate()
-
-  const handleOnSearch = (searchValue) => {
-    setSearchQuery(searchValue);
-    if (searchValue.trim()) {
-      setIsSearching(true);
-      navigate('seccion/Productos');
-    }
-  };
-
-  const handleOnClick = () => {
-    const searchInput = document.querySelector('.' + clases.input);
-    const searchValue = searchInput.value.trim();
-    handleOnSearch(searchValue);
-  };
-
   return (
     <div>
       <div className={clases.slider}>
@@ -66,13 +46,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div><ProdImpContainer/></div>
-
-        <div className={clases.input__container}>
-          <input type="text" placeholder='Buscar Productos...' className={clases.input}/>
-          <img className={clases.img__icon} src={iconSearch} alt="Buscar" onClick={handleOnClick}/>
-        </div>
-        
+        <div><ProdImpContainer/></div>       
         <FormUserSesion />
       </section>
     </div>

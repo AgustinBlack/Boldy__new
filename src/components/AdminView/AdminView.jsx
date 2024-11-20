@@ -186,9 +186,9 @@ function AdminView() {
                     </button>
                 </div>
             </div>
-            <div>
-                <ul className={clases.lista}>
+            <div className={clases.lista}>
                     <input className={clases.inputs} type="text" placeholder='Buscar productos' onChange={(e) => setSearchQuery(e.target.value)} />
+                <ul>
                     {filteredProducts.map((product) => (
                         <li className={clases.prod__lista} key={product.id}>
                             {product.nombre}

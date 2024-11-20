@@ -1,7 +1,7 @@
 import clases from './ItemDetail.module.css'
 import { useState, useEffect } from 'react';
 
-const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo, id }) => {
+const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo }) => {
   const handleOnClick = () => {
     setTimeout(() => {
       window.location.href = "https://api.whatsapp.com/send?phone=541144758749&text=Hola%20!%20Quiero%20más%20información%20sobre..."

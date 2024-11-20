@@ -7,7 +7,7 @@ export const FiltrersProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState('')
     const [selectBrand, setSelectBrand] = useState('')
     const [isSearching, setIsSearching] = useState(false)
-    const [priceRange, setPriceRange] = useState({ min: 50, max: 500 })  // Rango inicial
+    const [priceRange, setPriceRange] = useState({ min: 50, max: 500 })
 
     const sortProducts = (prod) => {
         let sortedProducts = [...prod]
