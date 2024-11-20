@@ -34,7 +34,6 @@
 }
 
 .slider {
-    margin-top: 20px;
     background-color: whitesmoke;
     padding: 10px;
 }
@@ -149,11 +148,11 @@
 
 @keyframes scrollLaptop {
     0% {
-        transform: translateX(1000%);
+        transform: translateX(0%);
     }
 
     100% {
-        transform: translatex(-10%)
+        transform: translatex(-1000%)
     }
 }
 
@@ -192,10 +191,6 @@
     .logos {
         width: 100px;
         animation: scrollLaptop 30s linear infinite;
-    }
-
-    .slider {
-        margin-top: 110px;
     }
 
     .div__desc {
@@ -256,6 +251,7 @@
     .div__padre__ilustrativo{
         flex-direction: row;
         width: 100%;
+        margin-top: 110px;
     }
 
     .padre__ilustrativo{

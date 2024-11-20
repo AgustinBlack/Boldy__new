@@ -1,5 +1,8 @@
 .titulo {
+    width: 100%;
+    text-align: center;
     padding-left: 10px;
+    padding-top: 10px;
 }
 
 .container__padre {
@@ -14,6 +17,8 @@
     gap: 30px;
     margin-top: 10px;
     padding: 10px;
+    position: relative;
+    right: 0;
 }
 
 .container::-webkit-scrollbar {
@@ -23,6 +28,7 @@
 @media(min-width: 1024px) {
     .container {
         justify-content: center;
+        right: -60px;
     }
 
     .container__padre {

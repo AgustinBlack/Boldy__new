@@ -13,17 +13,6 @@ import FormUserSesion from '../FormUserSesion/FormUserSesion'
 const Home = () => {
   return (
     <div>
-      <div className={clases.slider}>
-        <div className={clases.slide__track}>
-          <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="Corteiz"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={essentials} alt="Essentials"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="Off White"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="Project Nude"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="Palm Angels"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={stussy} alt="Tussy"/></div>
-          <div className={clases.slide}><img className={clases.logos} src={supreme} alt="Supreme"/></div>
-        </div>
-      </div>
 
       <section className={clases.container}>
         <section>
@@ -38,6 +27,18 @@ const Home = () => {
           </div>
         </section>
 
+        <div className={clases.slider}>
+          <div className={clases.slide__track}>
+            <div className={clases.slide}><img className={clases.logos} src={corteiz} alt="Corteiz"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={essentials} alt="Essentials"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={offWhite} alt="Off White"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={projectNude} alt="Project Nude"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={palmAngels} alt="Palm Angels"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={stussy} alt="Tussy"/></div>
+            <div className={clases.slide}><img className={clases.logos} src={supreme} alt="Supreme"/></div>
+          </div>
+        </div>
+        
         <h2 className={clases.titulo}>Bienvenidos a BOLDY</h2>
 
         <div className={clases.txt__container}>

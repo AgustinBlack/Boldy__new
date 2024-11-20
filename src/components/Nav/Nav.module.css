@@ -139,7 +139,7 @@
     width: 250px;
     padding: 7px;
     border-radius: 40px;
-    border: 2px solid #388cda;
+    border-bottom: 2px solid #000000;
     position: fixed;
     right: 66px;
     top: 581px;
@@ -166,6 +166,9 @@
         width: 98%;
         height: 70px;
     }
+    .menu__phone{
+        right: 0;
+    }
     .div__logo{
         background-color: white;
         margin-top: 10px;
@@ -190,5 +193,7 @@
     }
     .input__container input {
         display: block;
+        top: 29px;
+        right: 42px;
     }
 }
