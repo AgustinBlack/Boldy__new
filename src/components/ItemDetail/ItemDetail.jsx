@@ -60,7 +60,7 @@ const ItemDetail = ({ img = [], nombre, precio, talle, genero, tipo }) => {
             </div>
           </div>
           <div className={clases.div__btn}>
-            <a className={clases.btn} onClick={handleOnClick}>Contactar al WhatsApp</a>
+            <a className={clases.btn} onClick={handleOnClick}>Consultar stock</a>
           </div>
         </div>
       </div>

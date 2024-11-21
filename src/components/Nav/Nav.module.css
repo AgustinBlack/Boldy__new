@@ -37,6 +37,9 @@
 .menu__phone{
     position: relative;
     right: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .link__elements{
@@ -125,14 +128,10 @@
 }
 
 .input__container{
-    width: 97%;
     position: relative;
     z-index: 5000;
-    top: 31px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    top: 17px;
+    left: 11px;
 }
 
 .input{
@@ -149,9 +148,6 @@
     position: fixed;
     width: 24px;
     height: 24px;
-    margin-left: 5px;
-    top: 586px;
-    right: 74px;
 }
 
 .div__input{
@@ -166,9 +162,11 @@
         width: 98%;
         height: 70px;
     }
+
     .menu__phone{
         right: 0;
     }
+
     .div__logo{
         background-color: white;
         margin-top: 10px;
@@ -179,18 +177,17 @@
         top: 11px;
         border-radius: 5px;
     }
+
     .logo{
         width: 150px;
     }
-    .img__icon{
-        right: 50px;
-        top: 35px;
-    }
+
     .div__input {
         display: flex;
         right: 40px;
         top: 30px;
     }
+
     .input__container input {
         display: block;
         top: 29px;

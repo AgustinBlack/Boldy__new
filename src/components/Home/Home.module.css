@@ -188,6 +188,10 @@
         align-items: center;
     }
 
+    .slide__track{
+        gap: 6em;
+    }
+
     .logos {
         width: 100px;
         animation: scrollLaptop 30s linear infinite;
